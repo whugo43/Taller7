@@ -28,8 +28,8 @@ typedef struct listaHijosTDA{
 
 
 
-Persona *crearPersona(char *nombre, int edad, float peso){
-	Persona *nuevo= ;
+Persona *crearPersona(char *nombre, int edad, int peso){
+	Persona *nuevo= (Persona *)malloc(sizeof (Persona));
 
 	nuevo->nombre = nombre;
 	nuevo->edad = edad;
@@ -38,8 +38,8 @@ Persona *crearPersona(char *nombre, int edad, float peso){
 	
 
 	nuevo->hijos = NULL;
-
-	return &nuevo;					
+       
+	return nuevo;					
 }
 
 
@@ -108,7 +108,6 @@ int main(void){
 	int i = 0;
 
 	for(i = 0; i <= TAMANO; i++){			
-
 		int edad = edadMin + rand() / (RAND_MAX / (edadMax - edadMin + 1) + 1);
 		int peso = pesoMin + rand() / (RAND_MAX / (pesoMax - pesoMin + 1) + 1);
 
