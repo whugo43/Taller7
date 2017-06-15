@@ -29,7 +29,7 @@ typedef struct listaHijosTDA{
 
 
 Persona *crearPersona(char *nombre, int edad, float peso){
-	Persona *nuevo=NULL;
+	Persona *nuevo= ;
 
 	nuevo->nombre = nombre;
 	nuevo->edad = edad;
