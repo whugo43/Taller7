@@ -1,2 +1,2 @@
 programa:
-	gcc -g -o taller7 taller7.c
+	gcc -o taller7 taller7.c
