@@ -1,3 +1,2 @@
-gcc main.c -o maindddddd
-
-ddddd
+programa:
+	gcc -g -o taller7 taller7.c
