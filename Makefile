@@ -1,1 +1,3 @@
-gcc main.c -o mainddddd
+gcc main.c -o maindddddd
+
+ddddd
