@@ -115,9 +115,10 @@ int main(void){
 	Persona *listaPersona[TAMANO];
 
 	int i = 0;
-	//detectado problema 5 revisar mas a fondo
-	for(i = 0; i <= TAMANO; i++){			
-
+	//solucion problema 5 : quitar el = en la condicion del for del forma que solo acceda a los 7 elementos del arreglo y no a los 7 e intente acceder a
+	//otra direccion fuera del array.
+	for(i = 0; i < TAMANO; i++){			
+		//fin solucion
 		int edad = edadMin + rand() / (RAND_MAX / (edadMax - edadMin + 1) + 1);
 		int peso = pesoMin + rand() / (RAND_MAX / (pesoMax - pesoMin + 1) + 1);
 
