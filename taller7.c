@@ -115,7 +115,7 @@ int main(void){
 	Persona *listaPersona[TAMANO];
 
 	int i = 0;
-
+	//detectado problema 5 revisar mas a fondo
 	for(i = 0; i <= TAMANO; i++){			
 
 		int edad = edadMin + rand() / (RAND_MAX / (edadMax - edadMin + 1) + 1);
