@@ -29,8 +29,11 @@ typedef struct listaHijosTDA{
 
 
 Persona *crearPersona(char *nombre, int edad, float peso){
-	Persona *nuevo=;
-
+	//solucion problema 1:inicializar puntero
+	Persona *nuevo=(Persona *)malloc(sizeof(Persona));
+	if(nuevo == NULL){
+			return NULL;		
+		}
 	nuevo->nombre = nombre;
 	nuevo->edad = edad;
 	nuevo->peso = peso;
@@ -38,7 +41,7 @@ Persona *crearPersona(char *nombre, int edad, float peso){
 	
 
 	nuevo->hijos = NULL;
-
+	//solucion problema 2 : no retornando direccion de memoria de variable local
 	return nuevo;					
 }
 
@@ -73,7 +76,8 @@ int anadirHijo(Persona *padre, Persona *hijo){
 			return -1;		
 		}
 		nuevo->per = hijo;
-		nuevo->siguiente = nuevo;
+		//solucion problema 4: el puntero siguiente del puntero nuevo debe apuntar a nulo no a si mismo
+		nuevo->siguiente =NULL;
 		lista_hijos->siguiente = nuevo;
 		return 0;	
 		
@@ -112,7 +116,8 @@ int main(void){
 		int edad = edadMin + rand() / (RAND_MAX / (edadMax - edadMin + 1) + 1);
 		int peso = pesoMin + rand() / (RAND_MAX / (pesoMax - pesoMin + 1) + 1);
 
-		crearPersona(nombres[i],  edad, peso);
+		//solucion 3: asignando lo que retorna la funcion crear persona en el array listaPersona
+		listaPersona[i]=crearPersona(nombres[i],  edad, peso);
 
 	}
 
